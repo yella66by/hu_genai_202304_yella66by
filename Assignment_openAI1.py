@@ -15,7 +15,7 @@ llm =OpenAI(
         top_p=1
 )
 
-def count(chain,query,doing):
+def count( chain,query,doing):
     with get_openai_callback() as cb:
         result=chain.run(query)
         print(f'spent a total of {cb.total_tokens} tokens {doing}')
