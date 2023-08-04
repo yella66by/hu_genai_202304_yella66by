@@ -29,9 +29,10 @@ prompt = f"""
     write those steps in the following format:
     Step1
     Step2
+    Step3
     .
     .
-    .
+    StepN-1
     StepN
 
 
@@ -41,13 +42,13 @@ prompt = f"""
 response = count(conversation_buf, prompt,"TO convert to steps")
 print(response)
 prompt2 = f"""
-    Your task is to write the mermaid code from the previously generated steps and explanation for how to generate the code is delimited by triple quotes
+    Your task is to generate the mermaid code from the previously generated steps and explanation for how to generate the code is delimited by triple quotes
 
     ```<steps>:
-        Step 1: Buy the ingredients needed to make pizza. 
-        Step 2: Prepare the pizza dough. 
-        Step 3: Add the sauce and toppings to the pizza dough. 
-        Step 4: Bake the pizza in the oven. 
+        Step 1: Buy the Ticket for journey. 
+        Step 2: Reach the Airport before boarding time. 
+        Step 3: Finish the boarding within specified time. 
+        Step 4: Take the seat that you have been alotted. 
         Step 5: Enjoy the delicious homemade pizza.
 
     <code>: graph TD
